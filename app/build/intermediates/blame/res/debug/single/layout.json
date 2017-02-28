@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/caody/AndroidStudioProjects/AndroidDemo/app/build/intermediates/res/merged/debug/layout/itemview_mainlist.xml",
+        "source": "/home/caody/AndroidStudioProjects/AndroidDemo/app/src/main/res/layout/itemview_mainlist.xml"
+    },
+    {
+        "merged": "/home/caody/AndroidStudioProjects/AndroidDemo/app/build/intermediates/res/merged/debug/layout/activity_eventbusactivity1.xml",
+        "source": "/home/caody/AndroidStudioProjects/AndroidDemo/app/src/main/res/layout/activity_eventbusactivity1.xml"
+    },
+    {
+        "merged": "/home/caody/AndroidStudioProjects/AndroidDemo/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/home/caody/AndroidStudioProjects/AndroidDemo/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/caody/AndroidStudioProjects/AndroidDemo/app/build/intermediates/res/merged/debug/layout/activity_eventbusactivity2.xml",
+        "source": "/home/caody/AndroidStudioProjects/AndroidDemo/app/src/main/res/layout/activity_eventbusactivity2.xml"
+    },
+    {
+        "merged": "/home/caody/AndroidStudioProjects/AndroidDemo/app/build/intermediates/res/merged/debug/layout/activity_data_clear_receiver_demo.xml",
+        "source": "/home/caody/AndroidStudioProjects/AndroidDemo/app/src/main/res/layout/activity_data_clear_receiver_demo.xml"
+    }
+]
