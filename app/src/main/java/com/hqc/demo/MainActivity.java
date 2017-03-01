@@ -1,20 +1,15 @@
 package com.hqc.demo;
 
-import com.hqc.demo.CallBackTest.EventListener;
+import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
 import com.hqc.demo.eventbusdemo.EventBusActivity1;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity implements OnItemClickListener {
@@ -48,6 +43,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
                 startActivity(intent0);
                 break;
             case DEMO_CALLBACK:
+                Intent intent1 = new Intent(this, CallBackDemoActivity.class);
+                startActivity(intent1);
                 break;
             case DEMO_DATA_CLEAR_RECEIVER:
                 Intent intent2 = new Intent(this, DataClearReceiverDemoActivity.class);

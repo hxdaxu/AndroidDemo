@@ -1,1 +1,4 @@
-#ignore some files
+ignore some files
+.idea/
+app/build/
+build/
