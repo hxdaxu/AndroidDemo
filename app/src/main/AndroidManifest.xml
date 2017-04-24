@@ -37,13 +37,15 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.gionee.clearData"></action>
+                <action android:name="com.gionee.clearData" />
             </intent-filter>
         </receiver>
 
         <activity
             android:name=".callbackdemo.CallBackDemoActivity"
-            android:label="CallBackDemo"></activity>
+            android:label="CallBackDemo" />
+        <activity android:name=".surfaceviewdemo.SurfaceViewActivity"
+            android:label="@string/title_activity_surface_view_demo"></activity>
     </application>
 
 </manifest>
