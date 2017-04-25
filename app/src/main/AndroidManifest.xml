@@ -11,6 +11,8 @@
     <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
 
     <application
         android:allowBackup="true"
@@ -38,14 +40,30 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.gionee.clearData" />
+
+                <action android:name="android.intent.action.PACKAGE_DATA_CLEARED" />
             </intent-filter>
         </receiver>
 
         <activity
             android:name=".callbackdemo.CallBackDemoActivity"
             android:label="CallBackDemo" />
+
         <activity android:name=".surfaceviewdemo.SurfaceViewActivity"
-            android:label="@string/title_activity_surface_view_demo"></activity>
+            android:label="@string/title_activity_surface_view_demo">
+
+        </activity>
+
+        <service
+            android:name=".remoteservicedemo.remoteservice"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.hqc.demo.remoteservicedemo" />
+            </intent-filter>
+        </service>
+
+        <activity android:name=".addAlarmDemo.AddAlarmActivity"/>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.hqc.demo;
 
+import com.hqc.demo.addAlarmDemo.AddAlarmActivity;
 import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
 import com.hqc.demo.eventbusdemo.EventBusActivity1;
@@ -16,10 +17,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
     private ListView mListView;
 
-    private String[] mStringArray = { "eventbusDemo", "callbackDemo","DataClearReceiverDemo" };
+    private String[] mStringArray = { "eventbusDemo", "callbackDemo","DataClearReceiverDemo","addAlarmDemo" };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
     private final int DEMO_DATA_CLEAR_RECEIVER = 2;
+    private final int DEMO_ADD_ALARM = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case DEMO_DATA_CLEAR_RECEIVER:
                 Intent intent2 = new Intent(this, DataClearReceiverDemoActivity.class);
                 startActivity(intent2);
+                break;
+            case DEMO_ADD_ALARM:
+                Intent intent3 = new Intent(this, AddAlarmActivity.class);
+                startActivity(intent3);
                 break;
             default:
                 break;

@@ -11,6 +11,6 @@ public class DataClearReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.d("DataClearReceiver","action = "+intent.getAction());
-        Log.d("DataClearReceiver","pkg = "+intent.getStringExtra("packageName"));
+//        Log.d("DataClearReceiver","pkg = "+intent.getStringExtra("packageName"));
     }
 }
