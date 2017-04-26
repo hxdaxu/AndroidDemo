@@ -3,9 +3,6 @@
     apk:oneshot="false" >
 
     <item
-        apk:drawable="@drawable/chronometer_ani_00"
-        apk:duration="100"/>
-    <item
         apk:drawable="@drawable/chronometer_ani_01"
         apk:duration="100"/>
     <item

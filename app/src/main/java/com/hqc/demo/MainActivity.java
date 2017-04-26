@@ -4,6 +4,7 @@ import com.hqc.demo.addAlarmDemo.AddAlarmActivity;
 import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
 import com.hqc.demo.eventbusdemo.EventBusActivity1;
+import com.hqc.demo.surfaceviewdemo.SurfaceViewActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -17,11 +18,12 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
     private ListView mListView;
 
-    private String[] mStringArray = { "eventbusDemo", "callbackDemo","DataClearReceiverDemo","addAlarmDemo" };
+    private String[] mStringArray = { "eventbusDemo", "callbackDemo","DataClearReceiverDemo","addAlarmDemo","surfaceViewDemo" };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
     private final int DEMO_DATA_CLEAR_RECEIVER = 2;
     private final int DEMO_ADD_ALARM = 3;
+    private final int DEMO_SURFACE_VIEW = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case DEMO_ADD_ALARM:
                 Intent intent3 = new Intent(this, AddAlarmActivity.class);
                 startActivity(intent3);
+                break;
+            case DEMO_SURFACE_VIEW:
+                Intent intent4 = new Intent(this, SurfaceViewActivity.class);
+                startActivity(intent4);
                 break;
             default:
                 break;

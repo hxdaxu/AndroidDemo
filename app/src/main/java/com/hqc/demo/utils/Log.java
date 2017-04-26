@@ -10,4 +10,10 @@ public class Log {
             android.util.Log.d(TAG, tag+" - "+msg);
         }
     }
+
+    public static void e(String tag,String msg){
+        if (isDebug) {
+            android.util.Log.e(TAG, tag+" - "+msg);
+        }
+    }
 }
