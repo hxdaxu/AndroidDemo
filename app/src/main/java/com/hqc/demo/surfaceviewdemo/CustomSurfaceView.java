@@ -61,7 +61,7 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
     }
 
     /**
-     * 制图方法
+     * 绘图方法
      */
     private void drawView() {
         // 无资源文件退出
@@ -106,33 +106,14 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     @Override
     public void run() {
-
-        // 每隔100ms刷新屏幕
-        while (mIsThreadRunning) {
-            drawView();
-            try {
-                Thread.sleep(mGapTime);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-    }
-
-    /**
-     * 开始动画
-     */
-    public void start() {
-        if (!mIsDestroy) {
-            mCurrentIndext = 0;
-            mIsThreadRunning = true;
-            new Thread(this).start();
-        } else {
-            // 如果SurfaceHolder已经销毁抛出该异常
-            try {
-                throw new Exception("IllegalArgumentException:Are you sure the SurfaceHolder is not destroyed");
-            } catch (Exception e) {
-                e.printStackTrace();
+        synchronized (mSurfaceHolder){
+            while (mIsThreadRunning) {
+                drawView();
+                try {
+                    Thread.sleep(mGapTime);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
@@ -152,17 +133,46 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
     }
 
     /**
-     * 结束动画
+     * start the animation.
      */
-    public void stop() {
+    public void start() {
+        if (!mIsDestroy) {
+            mCurrentIndext = 0;
+            mIsThreadRunning = true;
+            new Thread(this).start();
+        } else {
+            // 如果SurfaceHolder已经销毁抛出该异常
+            try {
+                throw new Exception("IllegalArgumentException:Are you sure the SurfaceHolder is not destroyed");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * pause
+     */
+    public void pause() {
         mIsThreadRunning = false;
     }
 
     /**
-     * 重置
+     * continue
+     */
+    public void continuePlay() {
+        mIsThreadRunning = true;
+        new Thread(this).start();
+    }
+
+    /**
+     * reset
      */
     public void reSet() {
         mIsThreadRunning = false;
         mCurrentIndext = 0;
+        if (mCanvas != null){
+            mCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+        }
     }
 }
