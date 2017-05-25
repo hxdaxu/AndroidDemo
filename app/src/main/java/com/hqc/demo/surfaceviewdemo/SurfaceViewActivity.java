@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.hqc.demo.R;
 
@@ -20,13 +21,14 @@ public class SurfaceViewActivity extends Activity implements View.OnClickListene
             R.drawable.chronometer_ani_21, R.drawable.chronometer_ani_22, R.drawable.chronometer_ani_23,
             R.drawable.chronometer_ani_24, R.drawable.chronometer_ani_25, R.drawable.chronometer_ani_26,
             R.drawable.chronometer_ani_27, R.drawable.chronometer_ani_28, R.drawable.chronometer_ani_29,
-            R.drawable.chronometer_ani_30, R.drawable.chronometer_ani_31,
+            R.drawable.chronometer_ani_30, R.drawable.chronometer_ani_31
     };
 
     private CustomSurfaceView mCustomSurfaceView;
     private Button bt_start;
     private Button bt_pause;
-    private Button bt_stop;
+    private Button bt_continue;
+    private Button bt_reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +46,13 @@ public class SurfaceViewActivity extends Activity implements View.OnClickListene
     private void initView() {
         bt_start = (Button) findViewById(R.id.bt_start);
         bt_pause = (Button) findViewById(R.id.bt_pause);
-        bt_stop = (Button) findViewById(R.id.bt_stop);
+        bt_continue = (Button) findViewById(R.id.bt_continue);
+        bt_reset = (Button) findViewById(R.id.bt_reset);
 
         bt_start.setOnClickListener(this);
         bt_pause.setOnClickListener(this);
-        bt_stop.setOnClickListener(this);
+        bt_continue.setOnClickListener(this);
+        bt_reset.setOnClickListener(this);
     }
 
     @Override
@@ -58,10 +62,23 @@ public class SurfaceViewActivity extends Activity implements View.OnClickListene
                 mCustomSurfaceView.start();
                 break;
             case R.id.bt_pause:
-//                mCustomSurfaceView.s
+                mCustomSurfaceView.pause();
                 break;
-            case R.id.bt_stop:
-                mCustomSurfaceView.stop();
+            case R.id.bt_continue:
+                mCustomSurfaceView.continuePlay();
+                break;
+            case R.id.bt_reset:
+                int pixValue = this.getResources().getDimensionPixelSize(R.dimen.sliding_distance_trigger_events);
+                int pixOffsetValte = this.getResources().getDimensionPixelOffset(R.dimen.sliding_distance_trigger_events);
+                float value = this.getResources().getDimension(R.dimen.sliding_distance_trigger_events);
+
+                int height = getWindowManager().getDefaultDisplay().getHeight();
+
+                String showMsg = "pixValue = "+pixValue+", pixOffsetValue = "+pixOffsetValte+", value = "+value+", height = "+height;
+                Toast.makeText(this,showMsg,Toast.LENGTH_SHORT).show();
+//                mCustomSurfaceView.reSet();
+                break;
+            default:
                 break;
         }
     }

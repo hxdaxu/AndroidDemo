@@ -4,10 +4,14 @@ import com.hqc.demo.addAlarmDemo.AddAlarmActivity;
 import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
 import com.hqc.demo.eventbusdemo.EventBusActivity1;
+import com.hqc.demo.gesturedemo.GestureActivity;
+import com.hqc.demo.mediaplayerdemo.MediaDemoActivity;
 import com.hqc.demo.surfaceviewdemo.SurfaceViewActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,12 +23,18 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
     private ListView mListView;
 
-    private String[] mStringArray = { "eventbusDemo", "callbackDemo","DataClearReceiverDemo","addAlarmDemo","surfaceViewDemo" };
+    private String[] mStringArray = {
+            "eventbusDemo", "callbackDemo","DataClearReceiverDemo",
+            "addAlarmDemo","surfaceViewDemo","mediaPlayerDemo" ,
+            "gestureDemo"
+    };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
     private final int DEMO_DATA_CLEAR_RECEIVER = 2;
     private final int DEMO_ADD_ALARM = 3;
     private final int DEMO_SURFACE_VIEW = 4;
+    private final int DEMO_MEDIAPLAYER = 5;
+    private final int DEMO_GESTURE = 6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +47,31 @@ public class MainActivity extends Activity implements OnItemClickListener {
         mListView = (ListView) findViewById(R.id.main_listview);
         mListView.setAdapter(new MainListViewAdapter(this, mStringArray));
         mListView.setOnItemClickListener(this);
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(getString(R.string.action_settings));
+        builder.setNegativeButton(getString(R.string.app_name), null);
+        builder.setPositiveButton(getString(R.string.app_name),
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+        builder.setCancelable(true);
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+
+            }
+        });
+        builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
+            @Override
+            public void onDismiss(DialogInterface dialog) {
+
+            }
+        });
     }
 
     @Override
@@ -62,6 +97,14 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case DEMO_SURFACE_VIEW:
                 Intent intent4 = new Intent(this, SurfaceViewActivity.class);
                 startActivity(intent4);
+                break;
+            case DEMO_MEDIAPLAYER:
+                Intent intent5 = new Intent(this, MediaDemoActivity.class);
+                startActivity(intent5);
+                break;
+            case DEMO_GESTURE:
+                Intent intent6 = new Intent(this, GestureActivity.class);
+                startActivity(intent6);
                 break;
             default:
                 break;

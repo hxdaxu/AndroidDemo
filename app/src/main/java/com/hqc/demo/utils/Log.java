@@ -11,6 +11,12 @@ public class Log {
         }
     }
 
+    public static void w(String tag,String msg){
+        if (isDebug) {
+            android.util.Log.w(TAG, tag+" - "+msg);
+        }
+    }
+
     public static void e(String tag,String msg){
         if (isDebug) {
             android.util.Log.e(TAG, tag+" - "+msg);

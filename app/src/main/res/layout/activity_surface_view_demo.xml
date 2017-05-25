@@ -55,8 +55,16 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:text="stop"
-            android:id="@+id/bt_stop"
+            android:text="continue"
+            android:id="@+id/bt_continue"
+            />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="reset"
+            android:id="@+id/bt_reset"
             />
 
 
