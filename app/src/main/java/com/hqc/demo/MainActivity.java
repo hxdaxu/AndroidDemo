@@ -3,17 +3,20 @@ package com.hqc.demo;
 import com.hqc.demo.addAlarmDemo.AddAlarmActivity;
 import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
+import com.hqc.demo.dialogdemo.DialogDemoActivity;
 import com.hqc.demo.eventbusdemo.EventBusActivity1;
 import com.hqc.demo.gesturedemo.GestureActivity;
 import com.hqc.demo.mediaplayerdemo.MediaDemoActivity;
+import com.hqc.demo.preferencedemo.SettingsActivity;
+import com.hqc.demo.sharedpreferencedemo.SharedPreferenceActivity;
 import com.hqc.demo.surfaceviewdemo.SurfaceViewActivity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -26,7 +29,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private String[] mStringArray = {
             "eventbusDemo", "callbackDemo","DataClearReceiverDemo",
             "addAlarmDemo","surfaceViewDemo","mediaPlayerDemo" ,
-            "gestureDemo"
+            "gestureDemo","sharePreferenceDemo","DialogDemoActivity",
+            "preferenceDemo"
     };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
@@ -35,6 +39,9 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private final int DEMO_SURFACE_VIEW = 4;
     private final int DEMO_MEDIAPLAYER = 5;
     private final int DEMO_GESTURE = 6;
+    private final int DEMO_SHAREDPREFERENCE = 7;
+    private final int DEMO_DIALOG = 8;
+    private final int DEMO_PREFERENCE = 9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +82,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
     }
 
     @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,
                             long id) {
         switch (position) {
@@ -105,6 +117,17 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case DEMO_GESTURE:
                 Intent intent6 = new Intent(this, GestureActivity.class);
                 startActivity(intent6);
+                break;
+            case DEMO_SHAREDPREFERENCE:
+                Intent intent7 = new Intent(this, SharedPreferenceActivity.class);
+                startActivity(intent7);
+                break;
+            case DEMO_DIALOG:
+                Intent intent8 = new Intent(this, DialogDemoActivity.class);
+                startActivity(intent8);
+            case DEMO_PREFERENCE:
+                Intent intent9 = new Intent(this, SettingsActivity.class);
+                startActivity(intent9);
                 break;
             default:
                 break;

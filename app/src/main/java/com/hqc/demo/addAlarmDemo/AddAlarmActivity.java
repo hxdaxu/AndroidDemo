@@ -3,6 +3,7 @@ package com.hqc.demo.addAlarmDemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.view.View;
 import android.widget.Button;
 
@@ -42,7 +43,7 @@ public class AddAlarmActivity extends Activity implements View.OnClickListener{
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(Calendar.THURSDAY);
         list.add(Calendar.WEDNESDAY);
-        Intent intent = new Intent("android.intent.action.SET_ALARM");
+        Intent intent = new Intent(AlarmClock.ACTION_SET_ALARM);
         intent.putExtra("android.intent.extra.alarm.HOUR",11);
         intent.putExtra("android.intent.extra.alarm.MINUTES",30);
         intent.putIntegerArrayListExtra("android.intent.extra.alarm.DAYS",list);

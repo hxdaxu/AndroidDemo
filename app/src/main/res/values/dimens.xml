@@ -6,4 +6,6 @@
     <dimen name="sliding_distance_trigger_events">112dp</dimen>
     <!-- <dimen name="sliding distance trigger events">16dp</dimen>-->
 
+    <dimen name="preference_height">50dp</dimen>
+
 </resources>

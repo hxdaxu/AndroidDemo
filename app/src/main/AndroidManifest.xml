@@ -48,7 +48,7 @@
             android:label="CallBackDemo" />
         <activity
             android:name=".surfaceviewdemo.SurfaceViewActivity"
-            android:label="@string/title_activity_surface_view_demo"></activity>
+            android:label="@string/title_activity_surface_view_demo" />
 
         <service
             android:name=".remoteservicedemo.remoteservice"
@@ -61,8 +61,17 @@
 
         <activity android:name=".addAlarmDemo.AddAlarmActivity" />
         <activity android:name=".mediaplayerdemo.MediaDemoActivity" />
-        <activity android:name=".gesturedemo.GestureActivity"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".gesturedemo.GestureActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".sharedpreferencedemo.SharedPreferenceActivity" />
+        <activity android:name=".dialogdemo.DialogDemoActivity" />
+        <activity
+            android:name=".preferencedemo.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".preferencedemo.Settings2Activity"
+            android:label="@string/title_activity_settings2"></activity>
     </application>
 
 </manifest>
