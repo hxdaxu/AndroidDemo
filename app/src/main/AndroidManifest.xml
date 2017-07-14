@@ -71,7 +71,19 @@
             android:label="@string/title_activity_settings" />
         <activity
             android:name=".preferencedemo.Settings2Activity"
-            android:label="@string/title_activity_settings2"></activity>
+            android:label="@string/title_activity_settings2" />
+        <activity android:name=".startactivitydemo.TestActivity" />
+
+        <receiver
+            android:name=".startactivitydemo.StartActivityReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.android.demo.START_TEST_ACTIVITY" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".startactivitydemo.StartActivityDemoActivity"></activity>
     </application>
 
 </manifest>

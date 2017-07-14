@@ -9,6 +9,7 @@ import com.hqc.demo.gesturedemo.GestureActivity;
 import com.hqc.demo.mediaplayerdemo.MediaDemoActivity;
 import com.hqc.demo.preferencedemo.SettingsActivity;
 import com.hqc.demo.sharedpreferencedemo.SharedPreferenceActivity;
+import com.hqc.demo.startactivitydemo.StartActivityDemoActivity;
 import com.hqc.demo.surfaceviewdemo.SurfaceViewActivity;
 
 import android.app.Activity;
@@ -30,7 +31,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
             "eventbusDemo", "callbackDemo","DataClearReceiverDemo",
             "addAlarmDemo","surfaceViewDemo","mediaPlayerDemo" ,
             "gestureDemo","sharePreferenceDemo","DialogDemoActivity",
-            "preferenceDemo"
+            "preferenceDemo","StartActivityDemoActivity"
     };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
@@ -42,6 +43,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private final int DEMO_SHAREDPREFERENCE = 7;
     private final int DEMO_DIALOG = 8;
     private final int DEMO_PREFERENCE = 9;
+    private final int DEMO_START_ACTIVITY = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +131,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
                 Intent intent9 = new Intent(this, SettingsActivity.class);
                 startActivity(intent9);
                 break;
+            case DEMO_START_ACTIVITY:
+                Intent intent10 = new Intent(this, StartActivityDemoActivity.class);
+                startActivity(intent10);
+                break;
+
             default:
                 break;
         }

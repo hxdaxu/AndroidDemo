@@ -22,4 +22,9 @@ public class Log {
             android.util.Log.e(TAG, tag+" - "+msg);
         }
     }
+    public static void i(String tag,String msg){
+        if (isDebug) {
+            android.util.Log.i(TAG, tag+" - "+msg);
+        }
+    }
 }

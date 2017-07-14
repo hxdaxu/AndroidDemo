@@ -70,7 +70,6 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
 
         ImageView iv = new ImageView(this);
 //        iv.setR
-        AlphabetIndexView
 
 //        HashMap<Object,Integer> map = new HashMap<>();
 //        ArrayList<Object> list = new ArrayList<Object>();

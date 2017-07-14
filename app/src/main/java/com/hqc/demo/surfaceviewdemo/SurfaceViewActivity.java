@@ -68,15 +68,7 @@ public class SurfaceViewActivity extends Activity implements View.OnClickListene
                 mCustomSurfaceView.continuePlay();
                 break;
             case R.id.bt_reset:
-                int pixValue = this.getResources().getDimensionPixelSize(R.dimen.sliding_distance_trigger_events);
-                int pixOffsetValte = this.getResources().getDimensionPixelOffset(R.dimen.sliding_distance_trigger_events);
-                float value = this.getResources().getDimension(R.dimen.sliding_distance_trigger_events);
-
-                int height = getWindowManager().getDefaultDisplay().getHeight();
-
-                String showMsg = "pixValue = "+pixValue+", pixOffsetValue = "+pixOffsetValte+", value = "+value+", height = "+height;
-                Toast.makeText(this,showMsg,Toast.LENGTH_SHORT).show();
-//                mCustomSurfaceView.reSet();
+                mCustomSurfaceView.reSet();
                 break;
             default:
                 break;
