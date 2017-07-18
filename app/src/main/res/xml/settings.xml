@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="setting_screen"
+    >
+
+    <PreferenceCategory
+        android:title="@string/pref_header_general">
+
+        <CheckBoxPreference
+            android:key="checkbox"
+            android:summary="this is checkbox"
+            android:title="test test"
+            />
+
+        <com.hqc.demo.preferencedemo.RadioPreference
+            android:key="radio_pref"
+            android:title="test test"
+            />
+
+        <com.hqc.demo.preferencedemo.RadioPreference2
+            android:key="radio_pref2"
+            android:title="test radio2"
+            />
+
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
