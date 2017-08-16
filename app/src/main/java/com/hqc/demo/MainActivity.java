@@ -50,6 +50,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        getWindow().setNavigationBarColor(getColor(R.color.nativetion_bar_color));
     }
 
     private void initView() {

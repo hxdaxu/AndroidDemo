@@ -28,8 +28,9 @@ public class MediaDemoActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_media_demo);
         bt_stop = (Button) findViewById(R.id.bt_stop);
         bt_stop.setOnClickListener(this);
-        mMediaPlayer = new MediaPlayer();
-        play();
+//        mMediaPlayer = MediaPlayer.create(R.raw.flash);
+//        mMediaPlayer = new MediaPlayer();
+//        play();
     }
 
     private void play() {
