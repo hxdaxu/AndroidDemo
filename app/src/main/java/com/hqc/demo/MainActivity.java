@@ -1,5 +1,7 @@
 package com.hqc.demo;
 
+import com.google.android.gms.appindexing.Action;
+import com.google.android.gms.appindexing.Thing;
 import com.hqc.demo.addAlarmDemo.AddAlarmActivity;
 import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
@@ -11,11 +13,11 @@ import com.hqc.demo.preferencedemo.SettingsActivity;
 import com.hqc.demo.sharedpreferencedemo.SharedPreferenceActivity;
 import com.hqc.demo.startactivitydemo.StartActivityDemoActivity;
 import com.hqc.demo.surfaceviewdemo.SurfaceViewActivity;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -26,12 +28,11 @@ import android.widget.ListView;
 public class MainActivity extends Activity implements OnItemClickListener {
 
     private ListView mListView;
-
     private String[] mStringArray = {
-            "eventbusDemo", "callbackDemo","DataClearReceiverDemo",
-            "addAlarmDemo","surfaceViewDemo","mediaPlayerDemo" ,
-            "gestureDemo","sharePreferenceDemo","DialogDemoActivity",
-            "preferenceDemo","StartActivityDemoActivity"
+            "eventbusDemo", "callbackDemo", "DataClearReceiverDemo",
+            "addAlarmDemo", "surfaceViewDemo", "mediaPlayerDemo",
+            "gestureDemo", "sharePreferenceDemo", "DialogDemoActivity",
+            "preferenceDemo", "StartActivityDemoActivity"
     };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
@@ -50,7 +51,6 @@ public class MainActivity extends Activity implements OnItemClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        getWindow().setNavigationBarColor(getColor(R.color.nativetion_bar_color));
     }
 
     private void initView() {
@@ -142,4 +142,21 @@ public class MainActivity extends Activity implements OnItemClickListener {
         }
 
     }
+
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    public Action getIndexApiAction() {
+        Thing object = new Thing.Builder()
+                .setName("Main Page") // TODO: Define a title for the content shown.
+                // TODO: Make sure this auto-generated URL is correct.
+                .setUrl(Uri.parse("http://[ENTER-YOUR-URL-HERE]"))
+                .build();
+        return new Action.Builder(Action.TYPE_VIEW)
+                .setObject(object)
+                .setActionStatus(Action.STATUS_TYPE_COMPLETED)
+                .build();
+    }
+
 }

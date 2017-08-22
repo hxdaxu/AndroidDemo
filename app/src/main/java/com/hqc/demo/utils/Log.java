@@ -27,4 +27,9 @@ public class Log {
             android.util.Log.i(TAG, tag+" - "+msg);
         }
     }
+    public static void i(String msg){
+        if (isDebug) {
+            android.util.Log.i(TAG,msg);
+        }
+    }
 }

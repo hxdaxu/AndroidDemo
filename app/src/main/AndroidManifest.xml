@@ -84,7 +84,11 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".startactivitydemo.StartActivityDemoActivity"></activity>
+        <activity android:name=".startactivitydemo.StartActivityDemoActivity"></activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
