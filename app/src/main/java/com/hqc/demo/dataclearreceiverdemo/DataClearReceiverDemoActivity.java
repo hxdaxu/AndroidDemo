@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.hqc.demo.R;
-import com.hqc.demo.utils.Log;
+import com.hqc.demo.utils.LogUtils;
 
 public class DataClearReceiverDemoActivity extends Activity implements View.OnClickListener{
 
@@ -68,7 +68,7 @@ public class DataClearReceiverDemoActivity extends Activity implements View.OnCl
         @Override
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
-            Log.d("DataClearReceiver action = ",action);
+            LogUtils.d("DataClearReceiver action = ",action);
             mTextView.setText("received action = "+action);
         }
     }

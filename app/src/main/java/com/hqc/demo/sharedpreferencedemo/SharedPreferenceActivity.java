@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hqc.demo.R;
-import com.hqc.demo.utils.Log;
+import com.hqc.demo.utils.LogUtils;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,12 +29,12 @@ public class SharedPreferenceActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d(TAG,"onCreate");
+        LogUtils.d(TAG,"onCreate");
 
         setContentView(R.layout.activity_shared_preference);
 
         Set<String> numbers = new HashSet<>();
-        Log.d(TAG,"numbers--1 "+numbers.hashCode());
+        LogUtils.d(TAG,"numbers--1 "+numbers.hashCode());
         for (int i = 0;i < 4;i++){
             numbers.add(Integer.toString(i));
         }
@@ -51,10 +51,10 @@ public class SharedPreferenceActivity extends Activity {
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG,"onClick");
+                LogUtils.d(TAG,"onClick");
                 SharedPreferences spf = getSharedPreferences(PREFERENCE_NAME,0);
                 Set<String> numbers = spf.getStringSet(SET_KEY,new HashSet<String>());
-                Log.d(TAG,"numbers--2 "+numbers.hashCode());
+                LogUtils.d(TAG,"numbers--2 "+numbers.hashCode());
 //                numbers.add(Integer.toString(count));
 
 //                SharedPreferences.Editor editor = spf.edit();
@@ -73,13 +73,13 @@ public class SharedPreferenceActivity extends Activity {
 
         @Override
         public void run() {
-            Log.d(TAG,"running---start");
+            LogUtils.d(TAG,"running---start");
             SharedPreferences spf = getSharedPreferences(PREFERENCE_NAME,0);
             Set<String> numbers = spf.getStringSet(SET_KEY,new HashSet<String>());
-            Log.d(TAG,"numbers--3 "+mNumbers.hashCode());
+            LogUtils.d(TAG,"numbers--3 "+mNumbers.hashCode());
 
             for (String s : mNumbers){
-                Log.d(TAG,s);
+                LogUtils.d(TAG,s);
             }
         }
     }
@@ -88,14 +88,14 @@ public class SharedPreferenceActivity extends Activity {
 
         @Override
         public void run() {
-            Log.d(TAG,"add running---start");
+            LogUtils.d(TAG,"add running---start");
             SharedPreferences spf = getSharedPreferences(PREFERENCE_NAME,0);
             Set<String> numbers = spf.getStringSet(SET_KEY,new HashSet<String>());
-            Log.d(TAG,"numbers--4 "+numbers.hashCode());
+            LogUtils.d(TAG,"numbers--4 "+numbers.hashCode());
 
             while (true){
                 numbers.add(Integer.toString(count));
-                Log.d(TAG,"added "+count);
+                LogUtils.d(TAG,"added "+count);
                 count++;
                 try {
                     Thread.sleep(1000);

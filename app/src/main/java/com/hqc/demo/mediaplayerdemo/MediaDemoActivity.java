@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hqc.demo.R;
-import com.hqc.demo.utils.Log;
+import com.hqc.demo.utils.LogUtils;
 
 import java.io.IOException;
 
@@ -29,8 +29,8 @@ public class MediaDemoActivity extends Activity implements View.OnClickListener{
         bt_stop = (Button) findViewById(R.id.bt_stop);
         bt_stop.setOnClickListener(this);
 //        mMediaPlayer = MediaPlayer.create(R.raw.flash);
-//        mMediaPlayer = new MediaPlayer();
-//        play();
+        mMediaPlayer = new MediaPlayer();
+        play();
     }
 
     private void play() {
@@ -42,6 +42,8 @@ public class MediaDemoActivity extends Activity implements View.OnClickListener{
             mMediaPlayer.setLooping(true);
             mMediaPlayer.prepare();
             mMediaPlayer.start();
+            mMediaPlayer.stop();
+
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,7 +55,7 @@ public class MediaDemoActivity extends Activity implements View.OnClickListener{
         switch (v.getId()){
             case R.id.bt_stop:
                 if (mMediaPlayer != null){
-                    Log.d(TAG,"mMediaPlayer.stop()");
+                    LogUtils.d(TAG,"mMediaPlayer.stop()");
 //                    mMediaPlayer.stop();
                     mMediaPlayer.release();
                 }

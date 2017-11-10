@@ -8,7 +8,8 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.graphics.PorterDuff;
 import android.util.AttributeSet;
-import com.hqc.demo.utils.Log;
+import com.hqc.demo.utils.LogUtils;
+
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -47,7 +48,7 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        Log.d(TAG,"surfaceCreated");
+        LogUtils.d(TAG,"surfaceCreated");
         mIsDestroy = false;
 //        if (mIsThreadRunning){
 //            continuePlay();
@@ -56,12 +57,12 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
 
     @Override
     public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-        Log.d(TAG,"surfaceChanged");
+        LogUtils.d(TAG,"surfaceChanged");
     }
 
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
-        Log.d(TAG,"surfaceDestroyed");
+        LogUtils.d(TAG,"surfaceDestroyed");
         mIsThreadRunning = false;
         mIsDestroy = true;
     }
@@ -72,7 +73,7 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
     private void drawView() {
         // 无资源文件退出
         if (mBitmapResourceIds == null) {
-            Log.e(TAG, "the bitmapsrcIDs is null");
+            LogUtils.e(TAG, "the bitmapsrcIDs is null");
             mIsThreadRunning = false;
             return;
         }
@@ -142,13 +143,13 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
      * start the animation.
      */
     public void start() {
-        Log.d(TAG,"start");
+        LogUtils.d(TAG,"start");
         if (mIsDestroy){
-            Log.e(TAG,"Exception: surface was destroyed.");
+            LogUtils.e(TAG,"Exception: surface was destroyed.");
             return;
         }
         if (mIsThreadRunning){
-            Log.w(TAG,"The animation is played.");
+            LogUtils.w(TAG,"The animation is played.");
             return;
         }
         mCurrentIndext = 0;
@@ -160,9 +161,9 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
      * pause
      */
     public void pause() {
-        Log.d(TAG,"pause");
+        LogUtils.d(TAG,"pause");
         if (mIsDestroy){
-            Log.e(TAG,"Exception: surface was destroyed.");
+            LogUtils.e(TAG,"Exception: surface was destroyed.");
             return;
         }
         mIsThreadRunning = false;
@@ -172,13 +173,13 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
      * continue
      */
     public void continuePlay() {
-        Log.d(TAG,"continuePlay");
+        LogUtils.d(TAG,"continuePlay");
         if (mIsDestroy){
-            Log.e(TAG,"Exception: surface was destroyed.");
+            LogUtils.e(TAG,"Exception: surface was destroyed.");
             return;
         }
         if (mIsThreadRunning){
-            Log.w(TAG,"The animation is played.");
+            LogUtils.w(TAG,"The animation is played.");
             return;
         }
         mIsThreadRunning = true;
@@ -189,9 +190,9 @@ public class CustomSurfaceView extends SurfaceView implements SurfaceHolder.Call
      * reset
      */
     public void reSet() {
-        Log.d(TAG,"reSet");
+        LogUtils.d(TAG,"reSet");
         if (mIsDestroy){
-            Log.e(TAG,"Exception: surface was destroyed.");
+            LogUtils.e(TAG,"Exception: surface was destroyed.");
             return;
         }
         mIsThreadRunning = false;

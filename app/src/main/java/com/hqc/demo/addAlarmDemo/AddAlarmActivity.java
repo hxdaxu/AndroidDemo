@@ -1,27 +1,21 @@
 package com.hqc.demo.addAlarmDemo;
 
 import android.app.Activity;
-import android.content.ContentProvider;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.UserManager;
 import android.provider.AlarmClock;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 
 import com.hqc.demo.R;
-import com.hqc.demo.utils.Log;
+import com.hqc.demo.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class AddAlarmActivity extends Activity implements View.OnClickListener{
 
@@ -72,24 +66,24 @@ public class AddAlarmActivity extends Activity implements View.OnClickListener{
     }
 
     private void startServiceMethon() {
-        Log.d(TAG,"startServiceMethon");
+        LogUtils.d(TAG,"startServiceMethon");
         Intent intent = new Intent("com.android.deskclock.ALARM_ALERT");
         startService(intent);
     }
 
     private void quertAudioPath(){
         Uri uri = Uri.parse("content://media/internal/audio/media/5");
-        Log.d("-----quertAudioPath","cursor = ");
+        LogUtils.d("-----quertAudioPath","cursor = ");
         ContentResolver cr = getApplicationContext().getContentResolver();
         String[] projection = new String[] { MediaStore.Audio.Media.DATA };
         Cursor cursor = cr.query(uri, projection, null, null, null);
-        Log.d("-----quertAudioPath","cursor = "+cursor);
+        LogUtils.d("-----quertAudioPath","cursor = "+cursor);
         if(cursor == null || !cursor.moveToFirst()){
             return;
         }
         int index = cursor.getColumnIndexOrThrow(MediaStore.Audio.Media.DATA);
         String path = cursor.getString(index);
-        Log.d("-----quertAudioPath",path);
+        LogUtils.d("-----quertAudioPath",path);
         cursor.close();
     }
 
@@ -128,18 +122,18 @@ public class AddAlarmActivity extends Activity implements View.OnClickListener{
 //        UserManager userManager = (UserManager) context.getSystemService(Context.USER_SERVICE);
 //        List<UserInfo> users = userManager.getUsers(true);
 //        final int count = users.size();
-//        Log.i(TAG,"user count = "+count);
+//        LogUtils.i(TAG,"user count = "+count);
 //
 //        NearestAlarm nearestAlarm = new NearestAlarm();
 //        for (int i = 0; i < count; i++) {
 //            NearestAlarm tempNearestAlarm = null;
 //            final UserInfo user = users.get(i);
-//            Log.i(TAG,"user id = "+user.id);
+//            LogUtils.i(TAG,"user id = "+user.id);
 //            try {
 //                cursor = context.getContentResolver().query(ContentProvider.maybeAddUserId(uri, user.id)
 //                        , null, null,
 //                        null, null);
-//                Log.i(TAG,"cursor = null :"+(cursor == null));
+//                LogUtils.i(TAG,"cursor = null :"+(cursor == null));
 //                if (cursor != null) {
 //                    if (cursor.moveToFirst()) {
 //                        tempNearestAlarm = new NearestAlarm(cursor);
@@ -154,19 +148,19 @@ public class AddAlarmActivity extends Activity implements View.OnClickListener{
 //            }
 //
 //            if(tempNearestAlarm != null) {
-//                Log.i(TAG,"time = "+tempNearestAlarm.getTime());
+//                LogUtils.i(TAG,"time = "+tempNearestAlarm.getTime());
 //                if (tempNearestAlarm.getTime() < now){
 //                    if (Math.abs(now - tempNearestAlarm.getTime()) < Math.abs(now - nearestAlarm.getTime())){
 //                        nearestAlarm = tempNearestAlarm;
 //                        nearestAlarm.setUserId(user.id);
-//                        Log.i("alarms","alarmId = "+nearestAlarm.getId()+",time = "+nearestAlarm.getTime()+",userId = "+nearestAlarm.getUserId());
+//                        LogUtils.i("alarms","alarmId = "+nearestAlarm.getId()+",time = "+nearestAlarm.getTime()+",userId = "+nearestAlarm.getUserId());
 //                    }
 //                }
 //            }
 //        }
-//        Log.i("alarms","alarmId = "+nearestAlarm.getId()+",time = "+nearestAlarm.getTime()+",userId = "+nearestAlarm.getUserId());
+//        LogUtils.i("alarms","alarmId = "+nearestAlarm.getId()+",time = "+nearestAlarm.getTime()+",userId = "+nearestAlarm.getUserId());
 //        if (nearestAlarm.getId() == -1) {
-//            Log.e("Exception : receive powerOff broadcast but nearest alarm is not ready. ");
+//            LogUtils.e("Exception : receive powerOff broadcast but nearest alarm is not ready. ");
 //            return null;
 //        }
 //

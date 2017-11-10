@@ -4,7 +4,7 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import com.hqc.demo.R;
-import com.hqc.demo.utils.Log;
+import com.hqc.demo.utils.LogUtils;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +19,7 @@ public class EventBusActivity1 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("EventBusActivity1", "onCreate");
+        LogUtils.d("EventBusActivity1", "onCreate");
         EventBus.getDefault().register(this);
         setContentView(R.layout.activity_eventbusactivity1);
         initVeiw();
@@ -43,19 +43,19 @@ public class EventBusActivity1 extends Activity {
     @Subscribe
     public void onEventMainThread(MessageEvent1 event){
 //        Toast.makeText(this, event.toString(), Toast.LENGTH_SHORT).show();
-        Log.d("onEventMainThread", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
+        LogUtils.d("onEventMainThread", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
     }
     @Subscribe
     public void onEvent(MessageEvent1 event){
-        Log.d("onEvent", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
+        LogUtils.d("onEvent", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
     }
     @Subscribe
     public void onEventBackgroundThread(MessageEvent1 event){
-        Log.d("onEventBackgroundThread", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
+        LogUtils.d("onEventBackgroundThread", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
     }
     @Subscribe
     public void onEventAsync(MessageEvent1 event){
-        Log.d("onEventAsync", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
+        LogUtils.d("onEventAsync", "event message:"+event.toString()+" threadID:"+Thread.currentThread().getId());
         tv1.setText(event.toString());
     }
     

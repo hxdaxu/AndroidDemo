@@ -1,6 +1,6 @@
 package com.hqc.demo.utils;
 
-public class Log {
+public class LogUtils {
     
     private static final boolean isDebug = true;
     private static final String TAG = "AndroidDemo";

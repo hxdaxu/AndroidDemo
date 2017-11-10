@@ -1,39 +1,15 @@
 package com.hqc.demo.preferencedemo;
 
 
-import android.annotation.TargetApi;
 import android.app.Notification;
-import android.content.Context;
-import android.content.Intent;
-import android.content.res.Configuration;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
-import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
-import android.app.ActionBar;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-import android.preference.PreferenceScreen;
-import android.preference.RingtonePreference;
-import android.text.TextUtils;
-import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import com.hqc.demo.R;
-import com.hqc.demo.utils.Log;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import com.hqc.demo.utils.LogUtils;
 
 
 public class SettingsActivity extends PreferenceActivity implements Preference.OnPreferenceClickListener {
@@ -87,14 +63,14 @@ public class SettingsActivity extends PreferenceActivity implements Preference.O
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
-        Log.d(TAG,"onPreferenceClick! id = "+preference.getKey());
+        LogUtils.d(TAG,"onPreferenceClick! id = "+preference.getKey());
 
         switch (preference.getKey()){
             case RADIO_PREFERENCE_KEY:
-                Log.d(TAG,"radio onClicked !");
+                LogUtils.d(TAG,"radio onClicked !");
                 break;
             case RADIO_PREFERENCE2_KEY:
-                Log.d(TAG,"radio2 onClicked !");
+                LogUtils.d(TAG,"radio2 onClicked !");
                 radio_pref2.setChecked(!radio_pref2.isChecked());
                 break;
 

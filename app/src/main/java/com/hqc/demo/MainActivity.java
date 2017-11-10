@@ -10,6 +10,7 @@ import com.hqc.demo.eventbusdemo.EventBusActivity1;
 import com.hqc.demo.gesturedemo.GestureActivity;
 import com.hqc.demo.mediaplayerdemo.MediaDemoActivity;
 import com.hqc.demo.preferencedemo.SettingsActivity;
+import com.hqc.demo.remoteservicedemo.ServiceControlActivity;
 import com.hqc.demo.sharedpreferencedemo.SharedPreferenceActivity;
 import com.hqc.demo.startactivitydemo.StartActivityDemoActivity;
 import com.hqc.demo.surfaceviewdemo.SurfaceViewActivity;
@@ -32,7 +33,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
             "eventbusDemo", "callbackDemo", "DataClearReceiverDemo",
             "addAlarmDemo", "surfaceViewDemo", "mediaPlayerDemo",
             "gestureDemo", "sharePreferenceDemo", "DialogDemoActivity",
-            "preferenceDemo", "StartActivityDemoActivity"
+            "preferenceDemo", "StartActivityDemoActivity","serviceDemo"
     };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
@@ -45,6 +46,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private final int DEMO_DIALOG = 8;
     private final int DEMO_PREFERENCE = 9;
     private final int DEMO_START_ACTIVITY = 10;
+    private final int SERVICE_DEMO = 11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +130,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case DEMO_DIALOG:
                 Intent intent8 = new Intent(this, DialogDemoActivity.class);
                 startActivity(intent8);
+                break;
             case DEMO_PREFERENCE:
                 Intent intent9 = new Intent(this, SettingsActivity.class);
                 startActivity(intent9);
@@ -135,6 +138,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case DEMO_START_ACTIVITY:
                 Intent intent10 = new Intent(this, StartActivityDemoActivity.class);
                 startActivity(intent10);
+                break;
+            case SERVICE_DEMO:
+                Intent intent11 = new Intent(this, ServiceControlActivity.class);
+                startActivity(intent11);
                 break;
 
             default:
