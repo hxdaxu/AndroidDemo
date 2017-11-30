@@ -95,7 +95,9 @@
 
         <activity android:name=".remoteservicedemo.ServiceControlActivity" />
         <activity android:name=".recyclerviewdemo.RecyclerViewActivity" />
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".BaseActivity" />
+        <activity android:name=".aidlClient.ShoppingActivity"></activity>
+        <activity android:name=".handlerdemo.HandlerActivity" />
     </application>
 
 </manifest>

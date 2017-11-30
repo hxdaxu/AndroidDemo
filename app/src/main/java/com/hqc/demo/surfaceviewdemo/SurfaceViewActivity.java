@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.hqc.demo.R;
+import com.hqc.demo.utils.WifiSsidUtils;
 
 public class SurfaceViewActivity extends Activity implements View.OnClickListener {
 
@@ -69,6 +70,8 @@ public class SurfaceViewActivity extends Activity implements View.OnClickListene
                 break;
             case R.id.bt_reset:
                 mCustomSurfaceView.reSet();
+//                String s = WifiSsidUtils.convertSsid("333630e5858de8b4b9576946692d6878");
+//                Toast.makeText(this,s,Toast.LENGTH_SHORT).show();
                 break;
             default:
                 break;

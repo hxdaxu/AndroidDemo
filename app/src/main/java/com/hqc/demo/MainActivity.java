@@ -3,6 +3,7 @@ package com.hqc.demo;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.Thing;
 import com.hqc.demo.addAlarmDemo.AddAlarmActivity;
+import com.hqc.demo.aidlClient.ShoppingActivity;
 import com.hqc.demo.callbackdemo.CallBackDemoActivity;
 import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
 import com.hqc.demo.dialogdemo.DialogDemoActivity;
@@ -33,7 +34,8 @@ public class MainActivity extends Activity implements OnItemClickListener {
             "eventbusDemo", "callbackDemo", "DataClearReceiverDemo",
             "addAlarmDemo", "surfaceViewDemo", "mediaPlayerDemo",
             "gestureDemo", "sharePreferenceDemo", "DialogDemoActivity",
-            "preferenceDemo", "StartActivityDemoActivity","serviceDemo"
+            "preferenceDemo", "StartActivityDemoActivity","serviceDemo",
+            "shopingActivity"
     };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
@@ -47,6 +49,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private final int DEMO_PREFERENCE = 9;
     private final int DEMO_START_ACTIVITY = 10;
     private final int SERVICE_DEMO = 11;
+    private final int SHOPING = 12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +145,10 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case SERVICE_DEMO:
                 Intent intent11 = new Intent(this, ServiceControlActivity.class);
                 startActivity(intent11);
+                break;
+            case SHOPING:
+                Intent intent12 = new Intent(this, ShoppingActivity.class);
+                startActivity(intent12);
                 break;
 
             default:
