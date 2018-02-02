@@ -69,7 +69,7 @@ public class ShoppingActivity extends Activity implements View.OnClickListener {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-            LogUtils.i(name.getPackageName()+"绑定成功！");
+            LogUtils.i(name.getPackageName()+"绑定成功！ thread name is "+Thread.currentThread().getName());
             IPayService payService = IPayService.Stub.asInterface(service);
             try {
                 payService.pay(company.getText().toString(),100);
