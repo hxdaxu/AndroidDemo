@@ -9,6 +9,7 @@ import com.hqc.demo.dataclearreceiverdemo.DataClearReceiverDemoActivity;
 import com.hqc.demo.dialogdemo.DialogDemoActivity;
 import com.hqc.demo.eventbusdemo.EventBusActivity1;
 import com.hqc.demo.gesturedemo.GestureActivity;
+import com.hqc.demo.imageloaderdemo.ImageLoaderActivity;
 import com.hqc.demo.mediaplayerdemo.MediaDemoActivity;
 import com.hqc.demo.preferencedemo.SettingsActivity;
 import com.hqc.demo.remoteservicedemo.ServiceControlActivity;
@@ -35,7 +36,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
             "addAlarmDemo", "surfaceViewDemo", "mediaPlayerDemo",
             "gestureDemo", "sharePreferenceDemo", "DialogDemoActivity",
             "preferenceDemo", "StartActivityDemoActivity","serviceDemo",
-            "shopingActivity"
+            "shopingActivity","ImageLoaderDemo"
     };
     private final int DEMO_EVENTBUS = 0;
     private final int DEMO_CALLBACK = 1;
@@ -50,6 +51,7 @@ public class MainActivity extends Activity implements OnItemClickListener {
     private final int DEMO_START_ACTIVITY = 10;
     private final int SERVICE_DEMO = 11;
     private final int SHOPING = 12;
+    private final int DEMO_IMAGELOADER= 13;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -149,6 +151,9 @@ public class MainActivity extends Activity implements OnItemClickListener {
             case SHOPING:
                 Intent intent12 = new Intent(this, ShoppingActivity.class);
                 startActivity(intent12);
+                break;
+                case DEMO_IMAGELOADER:
+                startActivity(new Intent(this, ImageLoaderActivity.class));
                 break;
 
             default:

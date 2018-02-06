@@ -1,6 +1,5 @@
 package com.hqc.demo.recyclerviewdemo;
 
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
 import com.hqc.demo.BaseActivity;
